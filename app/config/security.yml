@@ -1,6 +1,7 @@
 security:
     encoders:
-        Alom\WebsiteBundle\Entity\User:
+        Alom\WebsiteBundle\Entity\User: plaintext
+        Alom\WebsiteBundle\Entity\User1:
             algorithm:        sha512
             encode-as-base64: true
             iterations:       5

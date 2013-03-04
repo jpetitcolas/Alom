@@ -19,7 +19,8 @@ class CommonController extends Controller
         $token = $this->get('security.context')->getToken();
         $isConnected = $this->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY');
         $username = $isConnected ? $token->getUsername() : null;
-
+        die('hello'); // added
+        exit(1); // added
         return $this->render('AlomWebsiteBundle:Common:banner.html.twig', array(
             'is_connected' => $isConnected,
             'username'     => $username

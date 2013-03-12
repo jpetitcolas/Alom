@@ -29,6 +29,8 @@ class MainController extends Controller
         $lastPosts = $this->getDoctrine()->getRepository('AlomWebsiteBundle:Post')->fetchLast(5);
         $lastBooks = $this->getDoctrine()->getRepository('AlomWebsiteBundle:Book')->fetchLast(5);
 
+        header('Content-type: text/html');
+
         return $this->render('AlomWebsiteBundle:Main:homepage.html.twig', array(
             'lastPosts' => $lastPosts,
             'lastBooks'  => $lastBooks
@@ -42,6 +44,8 @@ class MainController extends Controller
         ));
 
         $response->headers->set('Content-Type', 'text/xml');
+        setcookie('sitemap', true);
+        setcookie('sitemap_xml', true);
 
         return $response;
     }

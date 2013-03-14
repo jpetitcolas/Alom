@@ -31,6 +31,8 @@ class MainController extends Controller
 
         header('Content-type: text/html');
 
+        Request::createFromGlobals();
+
         return $this->render('AlomWebsiteBundle:Main:homepage.html.twig', array(
             'lastPosts' => $lastPosts,
             'lastBooks'  => $lastBooks

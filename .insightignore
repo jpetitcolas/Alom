@@ -1,0 +1,9 @@
+# A strange file...
+
+web/app*.php
+web/non-utf8-file.php
+s*/*/*/view.*.twig
+*Controller.php
+app/console
+  
+

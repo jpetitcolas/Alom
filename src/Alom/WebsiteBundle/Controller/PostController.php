@@ -34,6 +34,8 @@ class PostController extends Controller
      */
     public function viewAction($slug)
     {
+        $f = fopen('/tmp/hello-world.php');
+
         $em = $this->getDoctrine()->getEntityManager();
         $repository = $em->getRepository('AlomWebsiteBundle:Post');
 

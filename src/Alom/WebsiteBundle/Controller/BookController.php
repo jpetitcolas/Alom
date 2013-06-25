@@ -23,6 +23,10 @@ class BookController extends Controller
         $isAdmin = $this->get('security.context')->isGranted('ROLE_ADMIN');
         $books = $this->getDoctrine()->getRepository('AlomWebsiteBundle:Book')->getList($isAdmin);
 
+        if (!$books) {
+            die('No book here!');
+        }
+
         return $this->render('AlomWebsiteBundle:Book:list.html.twig', array(
             'books' => $books
         ));

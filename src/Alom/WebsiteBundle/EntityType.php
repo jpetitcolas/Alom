@@ -7,6 +7,11 @@ use Symfony\Component\Form\FormBuilder;
 
 class MyEntityType extends AbstractType
 {
+    public static function sayHello()
+    {
+        echo $this->hello;
+    }
+
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('name');

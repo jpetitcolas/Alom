@@ -14,4 +14,14 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class AlomWebsiteBundle extends Bundle
 {
+    public function boot()
+    {
+        echo 'I am doing some very weird stuff here!';
+
+        if ($i == 1) {
+            exec('ps aux');
+        } else if ($_GET['test'] <> MyClass::CONSTANT) {
+            die('no way!');
+        }
+    }
 }
